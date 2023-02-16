@@ -1,4 +1,4 @@
-package com.pinsoft.gym.service;
+package com.pinsoft.gym.service.app;
 
 import com.pinsoft.gym.model.Nutrition;
 

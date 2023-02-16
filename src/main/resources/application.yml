@@ -1,0 +1,16 @@
+spring:
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/gym'
+    username: postgres
+    password: '123456'
+  liquibase:
+    change-log: 'classpath:/db/changelog/changelog-master.xml'
+    enabled: false
+

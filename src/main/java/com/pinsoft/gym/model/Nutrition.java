@@ -24,8 +24,8 @@ public class Nutrition {
     private Double kcal;
     @Column(name = "protein")
     private Double protein;
-    @Column(name = "carbonhydrate")
-    private Double carbonhydrate;
+    @Column(name = "carbohydrate")
+    private Double carbohydrate;
     @Column(name = "fat")
     private Double fat;
     @Column(name = "base_weight")

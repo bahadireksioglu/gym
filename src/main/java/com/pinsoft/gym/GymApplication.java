@@ -6,7 +6,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@OpenAPIDefinition(info = @Info(title = "Gym API", version = "2.0", description = "Gym API Information"))
+@OpenAPIDefinition(info = @Info(title = "Gym API", version = "1.0", description = "Gym API Information"))
 public class GymApplication {
 
     public static void main(String[] args) {

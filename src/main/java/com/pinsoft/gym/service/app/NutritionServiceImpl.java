@@ -1,7 +1,8 @@
-package com.pinsoft.gym.service;
+package com.pinsoft.gym.service.app;
 
 import com.pinsoft.gym.model.Nutrition;
 import com.pinsoft.gym.repository.NutritionRepository;
+import com.pinsoft.gym.service.app.NutritionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
