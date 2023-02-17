@@ -7,6 +7,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface NutritionRepository extends JpaRepository<Nutrition, Integer> {
     public Nutrition getById(Integer id);
-    @Query("SELECT n FROM Nutrition n WHERE n.carbonhydrate = :carbonhydrate")
-    public Nutrition getByCarbonhydrateValue(@Param("carbonhydrate") Double val);
+    @Query("SELECT n FROM Nutrition n WHERE n.carbohydrate = :carbohydrate")
+    public Nutrition getByCarbonhydrateValue(@Param("carbohydrate") Double val);
 }
