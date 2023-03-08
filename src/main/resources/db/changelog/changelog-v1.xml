@@ -78,9 +78,6 @@
             <column name="name" type="varchar(255)">
                 <constraints nullable="false" />
             </column>
-            <column name="nutrition_id" type="int">
-                <constraints nullable="false" />
-            </column>
         </createTable>
         <createTable tableName="user">
             <column name="id" type="int" autoIncrement="true">
@@ -130,5 +127,13 @@
                                  constraintName="meal_list_fk_2"
                                  referencedTableName="nutrition" referencedColumnNames="id" />
         <!-- ALTER TABLE (id(03)) -->
+    </changeSet>
+    <changeSet id="02" author="Taha">
+        <preConditions onFail="HALT">
+            <tableExists tableName="nutrition" schemaName="public"/>
+        </preConditions>
+        <addColumn schemaName="public" tableName="nutrition">
+            <column name="health_score" type="int"/>
+        </addColumn>
     </changeSet>
 </databaseChangeLog>
