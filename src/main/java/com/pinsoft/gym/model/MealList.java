@@ -12,6 +12,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","nutrition"})
 @Table(name="meal_list",schema = "public")
 public class MealList {
     @Id

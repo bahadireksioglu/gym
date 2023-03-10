@@ -1,5 +1,6 @@
 package com.pinsoft.gym.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,6 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","nutritionType"})
 @Table(name = "nutrition", schema = "public")
 public class Nutrition {
     @Id
@@ -30,7 +32,9 @@ public class Nutrition {
     private Double fat;
     @Column(name = "base_weight")
     private Double baseWeight;
-    @OneToOne
+    @Column(name="health_score")
+    private Integer healthScore;
+    @ManyToOne
     @JoinColumn(name="nutrition_type_id")
     private NutritionType nutritionType;
     @OneToMany(mappedBy = "nutrition")
