@@ -114,6 +114,7 @@
             </column>
 
         </createTable>
+        
 
         <addForeignKeyConstraint baseTableName="nutrition" baseColumnNames="nutrition_type_id"
                                  constraintName="nutrition_fk"
@@ -128,6 +129,35 @@
                                  referencedTableName="nutrition" referencedColumnNames="id" />
         <!-- ALTER TABLE (id(03)) -->
     </changeSet>
+
+    <changeSet id="02" author="tolga">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="workout"/>
+            </not>
+        </preConditions>
+        <createTable tableName="workout">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="exercise_name" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="exercise_description" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="exercise_type" type="varchar(255)">
+                <constraints nullable="false"  />
+            </column>
+            <column name="exercise_difficulty" type="varchar(255)">
+                <constraints nullable="false"  />
+            </column>
+            <column name="burned_calorie" type="int">
+                <constraints nullable="false"  />
+            </column>
+
+        </createTable>
+
     <changeSet id="02" author="Taha">
         <preConditions onFail="HALT">
             <tableExists tableName="nutrition" schemaName="public"/>
@@ -135,5 +165,6 @@
         <addColumn schemaName="public" tableName="nutrition">
             <column name="health_score" type="int"/>
         </addColumn>
+
     </changeSet>
 </databaseChangeLog>
