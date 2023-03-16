@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,6 +19,6 @@ public class NutritionType {
     private Integer id;
     @Column(name="name")
     private String name;
-    @OneToOne(mappedBy = "nutritionType")
-    private Nutrition nutrition;
+    @OneToMany(mappedBy = "nutritionType")
+    private List<Nutrition> nutrition;
 }

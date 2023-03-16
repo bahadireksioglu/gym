@@ -32,6 +32,7 @@ public class SecurityConfig {
                 .requestMatchers("/v3/api-docs/**").permitAll()
                 .requestMatchers("/api/v1/auth/**").permitAll()
                 .requestMatchers("/workout/**").permitAll()
+                .requestMatchers("/Calorie/**").permitAll()
                 .anyRequest()
                 .authenticated()
                 .and()
